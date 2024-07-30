@@ -27,8 +27,8 @@ const Login: React.FC = () => {
     }
   };
 
-  const handleGoogleError = (error: any) => {
-    console.error('Google login error:', error);
+  const handleGoogleError = () => {
+    console.error('Google login error:');
   };
 
   const handleRegister = () => {
@@ -67,10 +67,10 @@ const Login: React.FC = () => {
           <hr className="w-full border-gray-300" />
         </div>
         <div className="mt-6">
-          <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID"> {/* Replace with your Google client ID */}
+          <GoogleOAuthProvider clientId="826554251305-jr8us8edg67iuuvtfanso2rqikt6qge8.apps.googleusercontent.com" > {/* Replace with your Google client ID */}
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
-              // onError={handleGoogleError}
+              onError={handleGoogleError}
               useOneTap
               // className="w-full"
             />
