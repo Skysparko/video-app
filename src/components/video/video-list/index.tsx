@@ -26,17 +26,17 @@ const VideoList = (props:TProps) => {
   useEffect(() => {
     fetchVideos();
   }, []);
-
+  console.log("rocess.env.REACT_APP_BACKEND_URL",process.env.REACT_APP_BACKEND_URL)
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Video List</h2>
-      <ul className="space-y-4">
+    <div className="p-4 ">
+      <h2 className="text-2xl font-bold mb-4 text-center max-xl:mt-10">Video List</h2>
+      <ul className="gap-5 flex flex-wrap justify-center">
         {videos.map(video => (
-          <li key={video._id} className="flex flex-col items-center p-4 border rounded-lg shadow-md hover:bg-gray-100 transition">
+          <li key={video._id} className="flex flex-col items-center p-4 border rounded-lg shadow-md hover:bg-gray-100 transition w-96">
             <video
               controls
               className="w-full max-w-md h-auto mb-4 border rounded-lg"
-              src={"http://localhost:5000"+video.url} // Ensure 'video.url' points to the correct video source
+              src={process.env.REACT_APP_BACKEND_URL+video.url} // Ensure 'video.url' points to the correct video source
               // alt={video.filename}
             />
             <div className="flex-1 text-center">
@@ -51,6 +51,8 @@ const VideoList = (props:TProps) => {
             </button>
           </li>
         ))}
+
+        {videos?.length === 0 && "No Saved Videos" }
       </ul>
     </div>
   );

@@ -92,7 +92,7 @@ const VideoRecorder = () => {
   return (
     <>
     <Header/>
-    <div className="flex flex-col items-center p-4 space-y-4">
+    <div className=" grid container max-xl:flex max-xl:flex-col mx-auto justify-center grid-cols-3 items-center p-4 space-y-4">
       {!recording && !videoURL && (
         <div className="relative w-full max-w-md flex flex-col gap-5">
           <img
@@ -153,7 +153,9 @@ const VideoRecorder = () => {
           </div>
         </div>
       )}
+      <div className="col-span-2">
       <VideoList videos={videos} fetchVideos={fetchVideos} />
+      </div>
     </div>
     </>
   );
