@@ -32,7 +32,7 @@ const VideoList = (props:TProps) => {
       <h2 className="text-2xl font-bold mb-4 text-center max-xl:mt-10">Video List</h2>
       <ul className="gap-5 flex flex-wrap justify-center">
         {videos.map(video => (
-          <li key={video._id} className="flex flex-col items-center p-4 border rounded-lg shadow-md hover:bg-gray-100 transition w-96">
+          <li key={video._id} className="flex flex-col items-center p-4 border rounded-lg shadow-md hover:bg-gray-100 transition max-w-96">
             <video
               controls
               className="w-full max-w-md h-auto mb-4 border rounded-lg"
