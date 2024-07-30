@@ -34,6 +34,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         .catch(() => {
           setIsAuthenticated(false);
         });
+    }else{
+      setIsAuthenticated(false);
     }
   }, []);
 
