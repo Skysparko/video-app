@@ -37,9 +37,9 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
-      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+      <div className="flex flex-col w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           <input
             type="email"
             value={email}
@@ -66,13 +66,14 @@ const Login: React.FC = () => {
           <span className="text-gray-500 px-4">or</span>
           <hr className="w-full border-gray-300" />
         </div>
-        <div className="mt-6">
+        <div className="mt-6 mx-auto">
           <GoogleOAuthProvider clientId="826554251305-jr8us8edg67iuuvtfanso2rqikt6qge8.apps.googleusercontent.com" > {/* Replace with your Google client ID */}
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
               onError={handleGoogleError}
               useOneTap
               // className="w-full"
+              
             />
           </GoogleOAuthProvider>
         </div>

@@ -53,6 +53,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const googleLogin = async (tokenId: string) => {
     try {
+
+      console.log("tokenId",tokenId)
       const response = await api.post("auth/google", { idToken: tokenId });
       localStorage.setItem("token", response.data.token);
       setIsAuthenticated(true);
